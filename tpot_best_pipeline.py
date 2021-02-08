@@ -1,10 +1,11 @@
 import numpy as np
 import pandas as pd
-from sklearn.feature_selection import SelectPercentile, f_classif
+from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.feature_selection import RFE
+from sklearn.kernel_approximation import Nystroem
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import BernoulliNB
+from sklearn.naive_bayes import GaussianNB
 from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import RobustScaler
 from tpot.export_utils import set_param_recursive
 
 # NOTE: Make sure that the outcome column is labeled 'target' in the data file
@@ -13,11 +14,11 @@ features = tpot_data.drop('target', axis=1)
 training_features, testing_features, training_target, testing_target = \
             train_test_split(features, tpot_data['target'], random_state=42)
 
-# Average CV score on the training set was: 0.9361305361305362
+# Average CV score on the training set was: 1.0
 exported_pipeline = make_pipeline(
-    SelectPercentile(score_func=f_classif, percentile=27),
-    RobustScaler(),
-    BernoulliNB(alpha=100.0, fit_prior=False)
+    RFE(estimator=ExtraTreesClassifier(criterion="gini", max_features=0.45, n_estimators=100), step=0.1),
+    Nystroem(gamma=0.7000000000000001, kernel="rbf", n_components=3),
+    GaussianNB()
 )
 # Fix random state for all the steps in exported pipeline
 set_param_recursive(exported_pipeline.steps, 'random_state', 42)
