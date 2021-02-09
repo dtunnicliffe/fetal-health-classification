@@ -40,17 +40,17 @@ The work in my main notebook follows the CRISP-DM method. I imported data from r
 
 The original data had three possible fetal health outcomes: Normal, Suspect, and Pathological.
 
-![graph](./images/FetalHealthFrequencies.png)
+<img src="./images/FetalHealthFrequencies.png" height="400">
 
 I combined the Suspect and Pathological classes into a category called At Risk to transform this into a binary classification problem.
 
-![graph](./images/TargetFrequencies.png)
+<img src="./images/TargetFrequencies.png" height="400">
 
 I utilized the class_weight='balanced' sklearn parameter to account for the class imbalance and provide a more accurate model.
 
 ## Results
 There is a correlation between prolonged fetal heart rate decelerations and fetal health outcome. Generally speaking, the greater number of prolonged declerations, the greater the risk. 
-![graph](./images/ProlongedDecelerationsBP.png)
+<img src="./images/ProlongedDecelerationsBP.png" height="400">
 
 There was a clear relationship between abnormal short and long term fetal heart rate variability and fetal health outcome.
 ![graph](./images/AbnormalVariabilityScatter.png)
@@ -69,7 +69,7 @@ Out of all the models evaluated with optimized hyperparameters, the Extra Trees 
 
 <img src="./images/ExtraTreesCM.png" height="400">
 
-![graph](./images/PrecisionRecallCurve.png)
+<img src="./images/PrecisionRecallCurve.png" height="450">
 
 The precision-recall curve above shows that while recall was prioritized, the model still did pretty well with precision too. This is also demonstrated by the model's F1 score of 83%. I would have expected a much lower F1 with recall being heavily prioritized, but this indicates that the model is performing quite well. The AUC or Area Under the Curve of 94.5% also confirms that this model is working well. Based on the performance of the model, especially the recall/sensitivity rate of 97%, I reject the null hypothesis that there is no relationship between automated CTG data and fetal health outcome.
 
