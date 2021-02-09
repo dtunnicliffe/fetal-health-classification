@@ -95,11 +95,11 @@ For any additional questions, please contact **Diane Tunnicliffe** at diane.j.tu
 
 
 ```
-├── README.md                        <- The top-level README for reviewers of this project
+├── README.md                           <- The top-level README for reviewers of this project
 ├── fetal_health_classification.ipynb   <- Narrative documentation of analysis in Jupyter notebook
-├── fetal_health_slides.pdf        <- PDF version of project presentation
-├── fetal_health_classification.pdf               <- PDF version of Jupyter notebook
-├── data                             <- CSV file used for this project
-└── images                           <- Visualizations generated for analysis
+├── fetal_health_slides.pdf             <- PDF version of project presentation
+├── fetal_health_classification.pdf                                     <- PDF version of Jupyter notebook
+├── data                                <- CSV file used for this project
+└── images                              <- Visualizations generated for analysis
 ```
 
