@@ -67,7 +67,7 @@ The positive class is 'At Risk' and the negative class is 'Normal'. The objectiv
 Out of all the models evaluated with optimized hyperparameters, the Extra Trees classifier performed the best, with a recall rate of 97%.  This means that 97% of the at-risk class was captured by the model. It has an accuracy score of 91%, meaning that 91% of the total predictions made by the model were correct. It is important to note that while there is a trade-off between recall and precision, which affects accuracy, you simply cannot put a price on a human life.
 
 
-<img src="./images/ExtraTreesCM.png" height="200">
+<img src="./images/ExtraTreesCM.png" height="400">
 
 ![graph](./images/PrecisionRecallCurve.png)
 
